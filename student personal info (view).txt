@@ -1,0 +1,28 @@
+
+@{
+    ViewBag.Title = "StudentPersonalInfo";
+}
+
+<h2>StudentPersonalInfo</h2>
+<h3>please provide personal information</h3>
+<form method ="post" action=" = "Student_Academic_Info">
+    <table align="center">
+        <tr>
+            <td><label>Name:</label></td>
+            <td> <label> @ViewBag.Name </label></td>
+        </tr>
+        <tr>
+            <td><label>Contact:</label></td>
+            <td> <input type="tel" placeholder="03xxxxxxxxx" name="contact"></td>
+        </tr>
+        <tr>
+            <td><label>Email:</label></td>
+            <td> <label> @ViewBag.mail </label></td>
+        </tr>
+        <tr>
+            <td><label>Institute Name:</label></td>
+            <td> <input type="text" name="uni" required placeholder="university name"></td>
+        </tr>
+    </table>
+</form>
+

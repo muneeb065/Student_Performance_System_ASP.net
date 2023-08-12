@@ -1,0 +1,73 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+
+namespace razor_syntax.Controllers
+{
+    public class ProjectController : Controller
+    {
+        //Get : Project
+        public ActionResult LoginForm()
+        {
+            return View();
+        }
+        //error
+        public ActionResult Error()
+        {
+            return View("Error");
+        }
+        public ActionResult S_Error()
+
+        {
+            return View("S_Error");
+        }
+        //Student Personal Information Form
+        public ActionResult StudentPersonalInfo(string name, string mail, string password)
+        {
+            if (name.Any(char.IsDigit) || name.Length <= 6 || password.Length < 8)
+            {
+                return View("Error");
+            }
+            else
+            {
+                ViewBag.name = name;
+                ViewBag.mail = mail;
+                //ViewBag.pass = password;
+                return View();
+            }//func end
+        }
+            //student academic info
+            public ActionResult Student_Academic_Info(string contact)
+        
+            {
+                if (contact.Contains("03") && contact.All(char.IsDigit) && contact.Length == 11)
+                {
+                    return View();
+                }
+                else
+                {
+                    return View("S_Error");
+                }
+            }
+                //calculate grades
+                public ActionResult Calculation(float MMarks, float OMarks, float IMarks, float IOMarks, float GMarks)
+            {
+                if (MMarks < 0 || MMarks > 1100 || OMarks > 1100 || OMarks < MMarks || IMarks < 0 || IMarks > 1100 || IOMarks < IMarks)
+                {
+                    return View("G_Error");
+                }
+                else
+                {
+                    ViewBag.M = MMarks / OMarks * 100;
+                    ViewBag.I = IMarks / IOMarks * 100;
+                    ViewBag.U = GMarks / 4 * 100;
+                    return View();
+                }
+            }// func end
+            }
+            }
+        
+    
+

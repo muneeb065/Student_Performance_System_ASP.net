@@ -1,0 +1,49 @@
+
+@{
+    ViewBag.Title = "Calculation";
+}
+
+<h2>Calculation</h2>
+<h3>your percentage in matric @ViewBag.M</h3>
+<h3>your percentage in inter @ViewBag.I</h3>
+<h3>your percentage in uni @ViewBag.U</h3>
+<h3>
+    @if (ViewBag.M >= 80)
+    {<b>A Grade in Matric</b> <br />}
+
+    @if (ViewBag.I >= 80)
+    {<b>A Grade in Intermediate</b> <br />}
+
+    @if (ViewBag.U >= 80)
+    {<b>A Grade in University</b> <br />}
+</h3>
+
+<h3>
+    @if (ViewBag.M >= 70 && ViewBag.M < 80)
+{<b>B Grade in Matric</b> <br />}
+    @if (ViewBag.I >= 70 && ViewBag.I < 80)
+{<b>B Grade in Intermediate</b> <br />}
+    @if (ViewBag.U >= 70 && ViewBag.U < 80)
+{<b>B Grade in University</b> <br />}
+</h3>
+
+<h3>
+    @if (ViewBag.M >= 60 && ViewBag.M < 70)
+    {<b>C Grade in Matric</b> <br />}
+    @if (ViewBag.I >= 60 && ViewBag.I < 70)
+    {<b>C Grade in Intermediate</b> <br />}
+    @if (ViewBag.U >= 60 && ViewBag.U < 70)
+    {<b>C Grade in University</b> <br />}
+</h3>
+
+<h3>
+    @if (ViewBag.M < 60)
+    {<b>D Grade in Matric</b> <br />}
+    @if (ViewBag.I < 60)
+    {<b>D Grade in Intermediate</b> <br />}
+    @if (ViewBag.U < 60)
+    {<b>D Grade in University</b> <br />}
+</h3>
+
+
+
